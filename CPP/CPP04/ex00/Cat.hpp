@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 09:19:40 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/20 11:26:56 by aait-bab         ###   ########.fr       */
+/*   Created: 2024/11/20 11:33:58 by aait-bab          #+#    #+#             */
+/*   Updated: 2024/11/20 14:55:02 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef CAT_HPP
 
-int main()
+# define CAT_HPP
+
+#include "Animal.hpp"
+
+class Cat : public Animal
 {
-    DiamondTrap *dt = new DiamondTrap("gladeator");
-    DiamondTrap dt1("sool");
+    public:
+        Cat();
+        Cat(std::string &type);
+        Cat(Cat &cat);
+        Cat& operator = (Cat &cat);
+        ~Cat();
+        void makeSound() const;
+};
 
-    dt->attack("sool");
-    dt1.takeDamage(30);
-}
+
+# endif

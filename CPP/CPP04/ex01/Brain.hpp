@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 09:19:40 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/20 11:26:56 by aait-bab         ###   ########.fr       */
+/*   Created: 2024/11/21 17:16:00 by aait-bab          #+#    #+#             */
+/*   Updated: 2024/11/21 17:19:26 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-int main()
+#include <iostream>
+
+class Brain
 {
-    DiamondTrap *dt = new DiamondTrap("gladeator");
-    DiamondTrap dt1("sool");
+    private: 
+        std::string ideas[100];
+    public:
+        Brain();
+        Brain(Brain& brain);
+        Brain& operator = (Brain& brain);
+        ~Brain();
+};
 
-    dt->attack("sool");
-    dt1.takeDamage(30);
-}
+#endif

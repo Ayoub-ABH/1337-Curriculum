@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 09:19:40 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/20 11:26:56 by aait-bab         ###   ########.fr       */
+/*   Created: 2024/11/22 12:08:58 by aait-bab          #+#    #+#             */
+/*   Updated: 2024/11/22 12:10:24 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef ICHARACTER_HPP
 
-int main()
+# define ICHARACTER_HPP
+
+#include <iostream>
+#include "AMateria.hpp"
+
+class ICharacter
 {
-    DiamondTrap *dt = new DiamondTrap("gladeator");
-    DiamondTrap dt1("sool");
+    public:
+        virtual ~ICharacter() {}
+        virtual std::string const & getName() const = 0;
+        virtual void equip(AMateria* m) = 0;
+        virtual void unequip(int idx) = 0;
+        virtual void use(int idx, ICharacter& target) = 0;
+};
 
-    dt->attack("sool");
-    dt1.takeDamage(30);
-}
+#endif

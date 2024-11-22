@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 09:19:40 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/20 11:26:56 by aait-bab         ###   ########.fr       */
+/*   Created: 2024/11/20 11:38:26 by aait-bab          #+#    #+#             */
+/*   Updated: 2024/11/20 14:54:57 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef DOG_HPP
 
-int main()
+# define DOG_HPP
+
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
-    DiamondTrap *dt = new DiamondTrap("gladeator");
-    DiamondTrap dt1("sool");
+    public:
+        Dog();
+        Dog(std::string &type);
+        Dog(Dog &dog);
+        Dog& operator = (Dog &dog);
+        ~Dog();
+        void makeSound() const;
+};
 
-    dt->attack("sool");
-    dt1.takeDamage(30);
-}
+
+# endif
