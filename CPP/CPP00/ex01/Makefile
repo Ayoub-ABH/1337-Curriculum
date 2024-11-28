@@ -11,10 +11,10 @@ OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET)
 
-$(TARGET): $(OBJS) $(HEADERS)
+$(TARGET): $(OBJS) 
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
 
-%.o: %.cpp
+%.o: %.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:

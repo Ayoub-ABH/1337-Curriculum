@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 10:06:05 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/10/20 13:54:33 by aait-bab         ###   ########.fr       */
+/*   Updated: 2024/11/23 11:12:18 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
 {
     PhoneBook phonebook;
     std::string command;
-    
+     
     std::cout << "PhoneBook Assisstant \n\tType ADD    : to add a contact\n\tType SEARCH : to find a contact\n\tType EXIT   : to finish" << std::endl;
     while (true)
     {

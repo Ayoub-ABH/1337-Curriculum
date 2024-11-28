@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 17:53:39 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/10/19 11:23:13 by aait-bab         ###   ########.fr       */
+/*   Updated: 2024/11/23 15:13:32 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,26 +54,37 @@ void PhoneBook::addContact()
             {
                 std::cout << "Enter the first name: ";
                 std::getline(std::cin, firstName);
+                if (std::cin.eof())
+                    return;
+                
             }
             while (lastName.empty())
             {
                 std::cout << "Enter the last name: ";
                 std::getline(std::cin, lastName);
+                if (std::cin.eof())
+                    return;
             }
             while (nickName.empty())
             {
                 std::cout << "Enter the nick name: ";
                 std::getline(std::cin, nickName);
+                if (std::cin.eof())
+                    return;
             }
             while (phoneNumber.empty() )
             {
                 std::cout << "Enter the phone number: ";
                 std::getline(std::cin, phoneNumber);
+                if (std::cin.eof())
+                    return;
             }
             while (darkestSecret.empty())
             {
                 std::cout << "Enter the darkest secret: ";
                 std::getline(std::cin, darkestSecret);
+                if (std::cin.eof())
+                    return;
             }
             this->contacts[i] = Contact(firstName, lastName, nickName, phoneNumber, darkestSecret);
             break;
@@ -134,6 +145,8 @@ void PhoneBook::searchContact()
     std::cout << "Enter the index of the contact: ";
     if (!(std::cin >> index) || index < 1 || index > 8)
     {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Invalid index" << std::endl;
         return;
     }
