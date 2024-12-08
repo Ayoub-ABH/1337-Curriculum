@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 16:39:16 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/10/17 20:50:14 by aait-bab         ###   ########.fr       */
+/*   Updated: 2024/12/08 13:37:43 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ class Contact
         std::string getNickName();
         std::string getPhoneNumber();
         std::string getDarkestSecret();
-        void displayContact(int index);
-        bool isEmpty();
 };
 
 #endif

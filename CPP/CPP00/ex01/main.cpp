@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 10:06:05 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/23 11:12:18 by aait-bab         ###   ########.fr       */
+/*   Updated: 2024/12/08 13:10:46 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int main()
     while (true)
     {
         std::cout << "Assistant ~>";
-        if (!(std::cin >> command) || command == "EXIT")
+        std::getline(std::cin, command);
+        if (std::cin.eof() || command == "EXIT")
             break;
         if (command == "ADD")
             phonebook.addContact();

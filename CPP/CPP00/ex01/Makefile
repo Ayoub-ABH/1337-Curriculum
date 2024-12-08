@@ -1,10 +1,10 @@
-CXX = g++
+CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 TARGET = phonebook
 
-
 SRCS =  Contact.cpp PhoneBook.cpp main.cpp
+
 HEADERS = Contact.hpp PhoneBook.hpp
 
 OBJS = $(SRCS:.cpp=.o)

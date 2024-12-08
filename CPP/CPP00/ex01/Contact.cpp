@@ -6,13 +6,12 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 17:48:08 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/10/18 10:03:40 by aait-bab         ###   ########.fr       */
+/*   Updated: 2024/11/28 17:55:40 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-// default constructor
 Contact::Contact()
 {
     this->firstName = "";
@@ -21,7 +20,7 @@ Contact::Contact()
     this->phoneNumber = "";
     this->darkestSecret = "";
 }
-// parameterized constructor
+
 Contact::Contact(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret)
 {
     this->firstName = firstName;
@@ -30,12 +29,12 @@ Contact::Contact(std::string firstName, std::string lastName, std::string nickNa
     this->phoneNumber = phoneNumber;
     this->darkestSecret = darkestSecret;
 }
-// destructor
+
 Contact::~Contact()
 {
 }
 
-// Setters
+
 void Contact::setFirstName(std::string name)
 {
     this->firstName = name;
@@ -57,7 +56,7 @@ void Contact::setDarkestSecret(std::string secret)
     this->darkestSecret = secret;
 }
 
-// Getters
+
 std::string Contact::getFirstName()
 {
     return this->firstName;
