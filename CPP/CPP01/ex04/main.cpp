@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 22:12:08 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/10/20 22:55:06 by aait-bab         ###   ########.fr       */
+/*   Updated: 2024/12/11 14:22:23 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,12 @@ int main(int argc, char *argv[])
     filename = argv[1];
     s1       = argv[2];
     s2       = argv[3];
-    
+
+    if (s1.empty())
+    {
+        std::cout << "Error: s1 must not be empty" << std::endl;
+        return (1);
+    }
     std::ifstream infile(filename);
     if (!infile)
     {
@@ -41,7 +46,11 @@ int main(int argc, char *argv[])
     }
 
     while (std::getline(infile, line))
-        content += line + "\n";
+    {
+        content += line;
+        if (!infile.eof())
+            content += "\n";
+    }
     infile.close();
 
     while ((pos = content.find(s1)) != std::string::npos)

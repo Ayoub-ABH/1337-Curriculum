@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 13:10:26 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/10/20 14:26:28 by aait-bab         ###   ########.fr       */
+/*   Updated: 2024/12/10 13:09:23 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 HumanA::HumanA(std::string name, Weapon& weapon) : weapon(weapon)
 {
     this->name = name;
-    this->weapon = weapon;
 }
 
 void HumanA::attack(void)

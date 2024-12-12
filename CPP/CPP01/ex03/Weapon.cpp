@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 23:08:05 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/10/20 21:58:13 by aait-bab         ###   ########.fr       */
+/*   Updated: 2024/12/09 16:04:06 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void Weapon::setType(std::string type)
     this->type = type;
 }
 
-std::string& Weapon::getType( void )
+const std::string& Weapon::getType( void )
 {
     return (this->type);
 }
