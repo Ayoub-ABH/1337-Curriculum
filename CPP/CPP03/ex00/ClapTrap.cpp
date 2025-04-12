@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:56:00 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/16 11:44:05 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/04/06 15:56:09 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ ClapTrap::ClapTrap(ClapTrap& ct)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Destructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -60,9 +60,9 @@ void ClapTrap::attack(const std::string& target)
     if (this->hitPoints > 0 && this->energyPoints > 0)
     {
         this->energyPoints--;
-        std::cout << "ClapTrap" << this->name << " attacks " << target << ", causing "<< 1 << " points of damage!" << std::endl;
-        std::cout << "energyPoint : " << this->energyPoints << " ; hitPoint : " \
-		<< this->hitPoints << " ; attakdamage : " << this->attackDamage << std::endl;
+        std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing "<< 1 << " points of damage!" << std::endl;
+        std::cout << "Energy Point : " << this->energyPoints << " ; Hit Point : " \
+		<< this->hitPoints << " ; Attack Damage : " << this->attackDamage << std::endl;
     }
     else
         std::cout << "Can't Attack no (hit or Energy) points left" << std::endl;
@@ -74,8 +74,8 @@ void ClapTrap::takeDamage(unsigned int amount)
     {
         this->hitPoints -= amount;
         std::cout << "ClapTrap " << this->name << " take " << amount << " points of damage!" << std::endl;
-        std::cout << "energyPoint : " << this->energyPoints << " ; hitPoint : " \
-		<< this->hitPoints << " ; attakdamage : " << this->attackDamage << std::endl;
+        std::cout << "Energy Point : " << this->energyPoints << " ; Hit Point : " \
+		<< this->hitPoints << " ; Attack Damage : " << this->attackDamage << std::endl;
     }
     else
         std::cout << "Can't Take damage no enough hit points" << std::endl;        
@@ -88,8 +88,8 @@ void ClapTrap::beRepaired(unsigned int amount)
         this->hitPoints += amount;
         std::cout << "ClapTrap " << this->name << "get repaired by" << amount << " points!" << std::endl;
         this->energyPoints--;
-        std::cout << "energyPoint : " << this->energyPoints << " ; hitPoint : " \
-		<< this->hitPoints << " ; attakdamage : " << this->attackDamage << std::endl;
+        std::cout << "Energy Point : " << this->energyPoints << " ; Hit Point : " \
+		<< this->hitPoints << " ; Attack Damage : " << this->attackDamage << std::endl;
     }
     else
         std::cout << "Can't get repaired no energy points left" << std::endl;   

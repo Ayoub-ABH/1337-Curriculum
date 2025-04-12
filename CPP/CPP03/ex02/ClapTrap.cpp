@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:56:00 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/17 08:53:40 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:57:58 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,17 +100,17 @@ std::string ClapTrap::getName() const
     return this->name;
 }
 
-int ClapTrap::getHitPoints() const
+unsigned int ClapTrap::getHitPoints() const
 {
     return this->hitPoints;
 }
 
-int ClapTrap::getEnergyPoints() const
+unsigned int ClapTrap::getEnergyPoints() const
 {
     return this->energyPoints;
 }
 
-int ClapTrap::getAttackDamage() const
+unsigned int ClapTrap::getAttackDamage() const
 {
     return this->attackDamage;    
 }
@@ -120,17 +120,17 @@ void ClapTrap::setName(std::string name)
     this->name = name;
 }
 
-void ClapTrap::setHitPoints(int hitPoints)
+void ClapTrap::setHitPoints(unsigned int hitPoints)
 {
     this->hitPoints = hitPoints; 
 }
 
-void ClapTrap::setEnergyPoints(int energyPoints)
+void ClapTrap::setEnergyPoints(unsigned int energyPoints)
 {
     this->energyPoints = energyPoints;  
 }
 
-void ClapTrap::setAttackDamage(int attackDamage)
+void ClapTrap::setAttackDamage(unsigned int attackDamage)
 {
     this->attackDamage = attackDamage;   
 }

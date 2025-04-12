@@ -1,9 +1,9 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-TARGET = ClapTrap
-SRCS = main.cpp ClapTrap.cpp 
-HEADER = ClapTrap.hpp
+TARGET = ScavTrap
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+HEADER = ClapTrap.hpp ScavTrap.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
