@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 17:16:00 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/21 17:19:26 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/04/20 15:35:50 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Brain
         std::string ideas[100];
     public:
         Brain();
-        Brain(Brain& brain);
-        Brain& operator = (Brain& brain);
+        Brain(const Brain& brain);
+        Brain& operator = (const Brain& brain);
         ~Brain();
 };
 

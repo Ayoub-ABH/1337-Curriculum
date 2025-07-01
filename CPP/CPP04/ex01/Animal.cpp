@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 11:19:17 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/20 14:53:53 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/04/20 15:45:15 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,7 @@ Animal::Animal()
     this->type = "Animal"; 
 }
 
-Animal::Animal(std::string &type)
-{
-    std::cout << "Animal parametric constractor is called" << std::endl;
-    this->type = type;
-}
-
-Animal& Animal::operator = (Animal &animal)
+Animal& Animal::operator = (const Animal &animal)
 {
     std::cout << "Animal = operator is called" << std::endl;
     if (this != &animal)
@@ -32,7 +26,7 @@ Animal& Animal::operator = (Animal &animal)
     return (*this);
 }
 
-Animal::Animal(Animal &animal)
+Animal::Animal(const Animal &animal)
 {
     std::cout << "Animal copy constractor is called" << std::endl;
     *this = animal;

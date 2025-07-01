@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:57:33 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/20 14:57:51 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/04/20 13:21:35 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class WrongCat : public WrongAnimal
 	public:
 		WrongCat();
 		~WrongCat();
-		WrongCat(WrongCat& animal);
-		WrongCat&	operator=(WrongCat& animal);
+		WrongCat(const WrongCat& animal);
+		WrongCat&	operator=(const WrongCat& animal);
 		void		makeSound(void) const;
 };
 

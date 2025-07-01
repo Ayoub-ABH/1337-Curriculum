@@ -6,10 +6,9 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:09:31 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/11 17:41:37 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/03/23 22:25:02 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "Fixed.hpp"
 
@@ -24,17 +23,16 @@ Fixed::Fixed()
 Fixed::Fixed(const Fixed& fixed)
 {
     std::cout << "Copy constructor called" << std::endl;
-    if (this != &fixed)
-        *this = fixed;
+    *this = fixed;
 }
 
 Fixed::Fixed(const int i_num)
 {
     std::cout << "Int constructor called" << std::endl;
-    this->value = i_num  * (1 << Fixed::fract);
+    this->value = i_num  << Fixed::fract;
 }
 
-Fixed::Fixed(float const f_num)
+Fixed::Fixed(const float f_num)
 {
     std::cout << "Float constructor called" << std::endl;
     this->value = roundf(f_num * (1 << Fixed::fract));
@@ -66,7 +64,7 @@ float Fixed::toFloat( void ) const
 
 int   Fixed::toInt( void ) const
 {
-    return (this->value / (1 << Fixed::fract));
+    return (this->value >> Fixed::fract);
 }
 
 int Fixed::getRawBits(void) const

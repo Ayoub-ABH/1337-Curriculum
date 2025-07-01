@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 11:43:24 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/21 18:03:19 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/04/20 15:46:25 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,14 @@ Dog::Dog()
     this->brain = new Brain();
 }
 
-Dog::Dog(std::string &type)
-{
-    std::cout << "Dog parametric constractor is called" << std::endl;
-    this->type = type;
-}
-
-Dog::Dog(Dog &dog)
+Dog::Dog(const Dog &dog)
 {
     std::cout << "Animal copy constractor is called" << std::endl;
-    *this = dog;
+    this->type = dog.type;
+    this->brain = new Brain(*dog.brain);
 }
 
-Dog& Dog::operator = (Dog &dog)
+Dog& Dog::operator = (const Dog &dog)
 {
     std::cout << "Dog = operator is called" << std::endl;
     if (this != &dog)

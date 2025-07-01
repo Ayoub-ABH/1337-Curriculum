@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:47:21 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/12 10:35:53 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/03/25 21:53:56 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@ Fixed::Fixed()
 
 Fixed::Fixed(const Fixed& fixed)
 {
-    if (this != &fixed)
-        *this = fixed;
+    *this = fixed;
 }
 
 Fixed::Fixed(const int i_num)
 {
-    this->value = i_num  * (1 << Fixed::fract);
+    this->value = i_num  << Fixed::fract;
 }
 
 Fixed::Fixed(float const f_num)
@@ -47,7 +46,7 @@ float Fixed::toFloat( void ) const
 
 int   Fixed::toInt( void ) const
 {
-    return (this->value / (1 << Fixed::fract));
+    return (this->value >> Fixed::fract);
 }
 
 int Fixed::getRawBits(void) const
@@ -75,56 +74,56 @@ std::ostream& operator<< (std::ostream&  out, const Fixed& fixed)
 
 bool Fixed::operator>(const Fixed& fixed)
 {
-    return this->value > fixed.value;
+    return (this->value > fixed.value);
 }
 
 bool Fixed::operator<(const Fixed& fixed)
 {
-    return this->value  < fixed.value;
+    return (this->value  < fixed.value);
 }
 
 bool Fixed::operator<=(const Fixed& fixed)
 {
-    return this->value <= fixed.value;
+    return (this->value <= fixed.value);
 }
 
 bool Fixed::operator>=(const Fixed& fixed)
 {
-    return this->value >= fixed.value;
+    return (this->value >= fixed.value);
 }
 
 bool Fixed::operator==(const Fixed& fixed)
 {
-    return this->value == fixed.value;
+    return (this->value == fixed.value);
 }
 
 bool Fixed::operator!=(const Fixed& fixed)
 {
-    return this->value != fixed.value;
+    return (this->value != fixed.value);
 }
 
 Fixed Fixed::operator+(const Fixed& fixed)
 {
     Fixed sum(this->toFloat() + fixed.toFloat());
-    return sum;
+    return (sum);
 }
 
 Fixed Fixed::operator*(const Fixed& fixed)
 {
     Fixed multi(this->toFloat() * fixed.toFloat());
-    return multi;
+    return (multi);
 }
 
 Fixed Fixed::operator-(const Fixed& fixed)
 {
     Fixed subtr(this->toFloat() - fixed.toFloat());
-    return subtr;
+    return (subtr);
 }
 
 Fixed Fixed::operator/(const Fixed& fixed)
 {
     Fixed div(this->toFloat() / fixed.toFloat());
-    return div;
+    return (div);
 }
 
 Fixed& Fixed::operator++()
@@ -148,9 +147,9 @@ Fixed& Fixed::operator--()
 
 Fixed Fixed::operator--(int)
 {
-    Fixed tmp = *this;
+    Fixed temp = *this;
     this->value--;
-    return (tmp);
+    return (temp);
 }
 
 Fixed& Fixed::min(Fixed& f1, Fixed& f2)

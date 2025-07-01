@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:09:31 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/06 12:38:03 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/03/23 22:13:55 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ Fixed::Fixed()
 Fixed::Fixed(const Fixed& fixed)
 {
     std::cout << "Copy constructor called" << std::endl;
-    if (this != &fixed)
-        *this = fixed;
+    *this = fixed;
 }
 
 Fixed::~Fixed()

@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 11:33:58 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/21 17:51:40 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/04/20 15:45:32 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ class Cat : public Animal
         Brain *brain;
     public:
         Cat();
-        Cat(std::string &type);
-        Cat(Cat &cat);
-        Cat& operator = (Cat &cat);
+        Cat(const Cat &cat);
+        Cat& operator = (const Cat &cat);
         ~Cat();
         void makeSound() const;
 };

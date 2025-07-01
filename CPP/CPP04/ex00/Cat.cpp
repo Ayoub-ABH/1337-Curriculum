@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 11:33:46 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/20 14:55:11 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/04/20 15:44:37 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,13 @@ Cat::Cat()
     this->type = "Cat";
 }
 
-Cat::Cat(std::string &type)
-{
-    std::cout << "Cat parametric constractor is called" << std::endl;
-    this->type = type;
-}
-
-Cat::Cat(Cat &cat)
+Cat::Cat(const Cat &cat)
 {
     std::cout << "Animal copy constractor is called" << std::endl;
     *this = cat;
 }
 
-Cat& Cat::operator = (Cat &cat)
+Cat& Cat::operator = (const Cat &cat)
 {
     std::cout << "Cat = operator is called" << std::endl;
     if (this != &cat)

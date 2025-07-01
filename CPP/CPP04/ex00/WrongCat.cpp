@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:57:24 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/20 14:57:26 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/04/20 13:21:45 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ WrongCat::~WrongCat(void)
     std::cout << "WrongCat destructor is called" << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat& WrongCat)
+WrongCat::WrongCat(const WrongCat& WrongCat)
 {
     std::cout << "WrongCat copy constructor is called" << std::endl;
     *this = WrongCat;
 }
 
-WrongCat& WrongCat::operator=(WrongCat& WrongCat)
+WrongCat& WrongCat::operator=(const WrongCat& WrongCat)
 {
     std::cout << "WrongCat copy constructor is called" << std::endl;
     if (this != &WrongCat)

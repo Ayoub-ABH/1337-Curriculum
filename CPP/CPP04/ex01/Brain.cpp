@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 17:15:58 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/21 18:04:39 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/04/20 13:48:36 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Brain::Brain()
     std::cout << "Brain default constractor is called" << std::endl;    
 }
 
-Brain& Brain::operator = (Brain& brain)
+Brain& Brain::operator = (const Brain& brain)
 {
     std::cout << "Brain the = operator is called" << std::endl;    
     if (this != &brain)
@@ -28,7 +28,7 @@ Brain& Brain::operator = (Brain& brain)
     return (*this);
 }
 
-Brain::Brain(Brain& brain)
+Brain::Brain(const Brain& brain)
 {
     std::cout << "Brain copy constractor is called" << std::endl;    
     *this = brain;

@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:40:51 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/20 15:04:35 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/04/20 13:34:26 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,9 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 
-// void f()
-// {
-//     system("leaks a.out");
-// }
 
 int main()
 {
-    // atexit(f);
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -36,8 +31,8 @@ int main()
 	delete j;
 	delete i;
 	delete meta;
-
-
+	
+	std::cout << "---------------------------" << std::endl;
     const WrongAnimal* Wanimal = new WrongAnimal();
 	const WrongAnimal* c = new WrongCat();
     std::cout << "---------------------------" << std::endl;

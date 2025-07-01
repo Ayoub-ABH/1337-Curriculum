@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 11:38:26 by aait-bab          #+#    #+#             */
-/*   Updated: 2024/11/21 17:51:10 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/04/20 15:46:28 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ class Dog : public Animal
         Brain *brain;
     public:
         Dog();
-        Dog(std::string &type);
-        Dog(Dog &dog);
-        Dog& operator = (Dog &dog);
+        Dog(const Dog &dog);
+        Dog& operator = (const Dog &dog);
         ~Dog();
         void makeSound() const;
 };
