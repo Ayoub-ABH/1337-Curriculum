@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 21:50:50 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/02 11:34:30 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:28:49 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 
 #include <iostream>
 #include "AForm.hpp"
-
-class Bureaucrat;
 
 class RobotomyRequestForm: public AForm
 {

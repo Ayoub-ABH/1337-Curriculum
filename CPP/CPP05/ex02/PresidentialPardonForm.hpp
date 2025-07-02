@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 21:50:25 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/05/20 22:08:38 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/02 11:34:19 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 #include <iostream>
 #include "AForm.hpp"
 
+class Bureaucrat;
+
 class PresidentialPardonForm: public AForm
 {
     private:
-        std::string target;
-        int         gradeToSign;
-        int         gradeToExecute;        
+        std::string target;      
     public:
         PresidentialPardonForm();
         PresidentialPardonForm(const PresidentialPardonForm& PPForm);
@@ -31,11 +31,9 @@ class PresidentialPardonForm: public AForm
         ~PresidentialPardonForm();
 
         void	execute(Bureaucrat const & executor) const;
-        void    beSigned(const Bureaucrat& b);
+        const   std::string& getTarget() const;
 
         PresidentialPardonForm& operator=(const PresidentialPardonForm& PPForm);
 };
-
-
 
 #endif

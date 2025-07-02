@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 21:50:50 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/01 18:27:35 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/02 11:34:41 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <fstream>
 #include "AForm.hpp"
 
+class Bureaucrat;
+
 class ShrubberyCreationForm: public AForm
 {
     private:
@@ -28,10 +30,10 @@ class ShrubberyCreationForm: public AForm
         ShrubberyCreationForm(std::string otherTarget);
         ~ShrubberyCreationForm();
 
-        const std::string& getTarget() const;
+        
         void	execute(Bureaucrat const & executor) const;
-        void    beSigned(const Bureaucrat& b);
-
+        const   std::string& getTarget() const;
+        
         ShrubberyCreationForm& operator=(const ShrubberyCreationForm& SCForm);
 };
 

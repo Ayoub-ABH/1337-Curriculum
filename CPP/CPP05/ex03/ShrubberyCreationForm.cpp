@@ -6,13 +6,12 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 16:51:43 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/02 12:07:39 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:26:34 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm", 145, 137)
 {
@@ -70,14 +69,4 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     outFile << "===============" << std::endl;
     
     outFile.close();
-}
-
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& shrubberyCreationForm)
-{
-    if (this != &shrubberyCreationForm)
-    {
-        this->target = shrubberyCreationForm.target;
-        this->setIsSigned(shrubberyCreationForm.getIsSigned());
-    }
-    return *this;
 }

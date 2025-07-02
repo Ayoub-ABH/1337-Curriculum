@@ -6,13 +6,12 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 21:48:07 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/02 12:07:24 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:28:28 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
-
 
 PresidentialPardonForm::PresidentialPardonForm(): AForm("PresidentialPardonForm", 25, 5)
 {
@@ -49,14 +48,4 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
         throw (AForm::FormIsNotSignedException(msg.c_str()));
     }
 	std::cout << this->target << "has been pardoned by Zaphod Beeblebrox" << std::endl;
-}
-
-PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& presidentialPardonForm)
-{
-    if (this != &presidentialPardonForm)
-    {
-        this->target = presidentialPardonForm.target;
-        this->setIsSigned(presidentialPardonForm.getIsSigned());
-    }
-    return *this;
 }

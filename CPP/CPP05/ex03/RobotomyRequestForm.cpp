@@ -6,13 +6,12 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 09:16:09 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/02 12:07:32 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:28:35 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
-
 
 RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", 72, 45)
 {
@@ -42,7 +41,7 @@ const std::string& RobotomyRequestForm::getTarget() const
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
     if (executor.getGrade() > this->getGradeToExecute())
-		throw (AForm::GradeTooLowException("Error: grade too low to execute this form!"));
+		throw (AForm::GradeTooLowException("Error: grade too low to sign this form!"));
     
 	if (!this->getIsSigned())
     {
@@ -57,14 +56,4 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
     } else {
         throw std::runtime_error(std::string("Robotomy failed on ") + this->target);
     }
-}
-
-RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& robotomyRequestForm)
-{
-    if (this != &robotomyRequestForm)
-    {
-        this->target = robotomyRequestForm.target;
-        this->setIsSigned(robotomyRequestForm.getIsSigned());
-    }
-    return *this;
 }

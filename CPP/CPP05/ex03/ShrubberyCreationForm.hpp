@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 21:50:50 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/02 11:34:30 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:28:54 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBO_TO_MY_REQUEST
+#ifndef SHRUBBERY_CREATION_FROM_HPP
 
-#define ROBO_TO_MY_REQUEST
+#define SHRUBBERY_CREATION_FROM_HPP
 
 #include <iostream>
+#include <fstream>
 #include "AForm.hpp"
 
-class Bureaucrat;
-
-class RobotomyRequestForm: public AForm
+class ShrubberyCreationForm: public AForm
 {
     private:
         std::string target;    
     public:
-        RobotomyRequestForm();
-        RobotomyRequestForm(const RobotomyRequestForm& RTMRForm);
-        RobotomyRequestForm(std::string otherTarget);
-        ~RobotomyRequestForm();
+        ShrubberyCreationForm();
+        ShrubberyCreationForm(const ShrubberyCreationForm& SCForm);
+        ShrubberyCreationForm(std::string otherTarget);
+        ~ShrubberyCreationForm();
 
+        const std::string& getTarget() const;
         void	execute(Bureaucrat const & executor) const;
-        const   std::string& getTarget() const;
 
-        RobotomyRequestForm& operator=(const RobotomyRequestForm& RTMRForm);
+        ShrubberyCreationForm& operator=(const ShrubberyCreationForm& SCForm);
 };
 
 #endif

@@ -6,14 +6,14 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 22:34:08 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/02 12:06:53 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:32:07 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-AForm::AForm(): gradeToSign(1), gradeToExecute(1) 
+AForm::AForm(): gradeToSign(1), gradeToExecute(1)
 {
     this->isSigned = false;
 }

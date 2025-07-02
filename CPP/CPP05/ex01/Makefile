@@ -2,7 +2,7 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-TARGET = ex00
+TARGET = ex01
 
 HEADER = Bureaucrat.hpp Form.hpp
 SRCS = Bureaucrat.cpp Form.cpp main.cpp

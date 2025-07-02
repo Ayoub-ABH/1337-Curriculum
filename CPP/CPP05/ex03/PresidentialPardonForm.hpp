@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 21:50:50 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/02 11:34:30 by aait-bab         ###   ########.fr       */
+/*   Created: 2025/05/20 21:50:25 by aait-bab          #+#    #+#             */
+/*   Updated: 2025/07/02 13:28:45 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBO_TO_MY_REQUEST
 
-#define ROBO_TO_MY_REQUEST
+#ifndef PRESIDENTIAL_PARDON_FORM_HPP
+
+#define PRESIDENTIAL_PARDON_FORM_HPP
 
 #include <iostream>
 #include "AForm.hpp"
 
-class Bureaucrat;
-
-class RobotomyRequestForm: public AForm
+class PresidentialPardonForm: public AForm
 {
     private:
-        std::string target;    
+        std::string target;
+        int         gradeToSign;
+        int         gradeToExecute;        
     public:
-        RobotomyRequestForm();
-        RobotomyRequestForm(const RobotomyRequestForm& RTMRForm);
-        RobotomyRequestForm(std::string otherTarget);
-        ~RobotomyRequestForm();
+        PresidentialPardonForm();
+        PresidentialPardonForm(const PresidentialPardonForm& PPForm);
+        PresidentialPardonForm(std::string otherTarget);
+        ~PresidentialPardonForm();
 
         void	execute(Bureaucrat const & executor) const;
         const   std::string& getTarget() const;
 
-        RobotomyRequestForm& operator=(const RobotomyRequestForm& RTMRForm);
+        PresidentialPardonForm& operator=(const PresidentialPardonForm& PPForm);
 };
+
+
 
 #endif
