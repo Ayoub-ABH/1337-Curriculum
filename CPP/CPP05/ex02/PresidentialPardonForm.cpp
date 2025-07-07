@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 21:48:07 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/02 12:07:24 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/07 15:22:52 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
         std::string msg = "The form " + this->target + " is not signed yet!";
         throw (AForm::FormIsNotSignedException(msg.c_str()));
     }
-	std::cout << this->target << "has been pardoned by Zaphod Beeblebrox" << std::endl;
+	std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& presidentialPardonForm)

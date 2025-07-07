@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 21:49:02 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/02 13:23:49 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/07 16:33:26 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,46 +18,29 @@
 
 int main()
 {
-    AForm *form; 
-    Bureaucrat b1("Ayoub",1);
-    Bureaucrat b2("3sso",50);
-    Bureaucrat b3("brahim",140);
 
-    try {
-        PresidentialPardonForm PPForm("PPFormClone");
-        b2.signForm(PPForm);
-        b2.executeForm(PPForm);
-    } catch (const std::exception& e)
+    try
     {
-        std::cout << e.what() << std::endl;   
+        Bureaucrat b1("Ayoub", 1);
+        Bureaucrat b2("3sso", 45);
+        Bureaucrat b3("brahim", 120);
+
+        PresidentialPardonForm PPForm("PPForm");
+        b1.signForm(PPForm);
+        b1.executeForm(PPForm);
+
+        std::cout << "------------------------------" << std::endl;
+        RobotomyRequestForm RRForm("RRForm");
+        b2.signForm(RRForm);
+        b2.executeForm(RRForm);
+
+        std::cout << "------------------------------" << std::endl;
+        ShrubberyCreationForm SCForm("SCForm");
+        b3.signForm(SCForm);
+        b3.executeForm(SCForm);
     }
-    
-    try {
-        form = new PresidentialPardonForm("PPForm");
-        form->beSigned(b1);
-        form->execute(b1);
-    } catch (const std::exception& e)
-    {
-        std::cout << e.what() << std::endl;   
-    }
-    std::cout << "------------------------------" << std::endl;
-    try {
-        form = new RobotomyRequestForm("RRForm");
-        form->beSigned(b2);
-        form->execute(b2);
-    } catch (const std::exception& e)
-    {
-        std::cout << e.what() << std::endl;   
-    }
-    std::cout << "------------------------------" << std::endl;
-    try {
-        form = new ShrubberyCreationForm("SCForm");
-        form->beSigned(b3);
-        form->execute(b3);
-    } catch (const std::exception& e)
+    catch (const std::exception &e)
     {
         std::cout << e.what() << std::endl;
     }
-
-    delete form;
 }

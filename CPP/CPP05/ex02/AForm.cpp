@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 22:34:08 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/02 12:06:53 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/07 15:13:30 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,6 @@ const char* AForm::FormIsNotSignedException::what() const throw()
 std::ostream&	operator<<(std::ostream &out, const AForm& form)
 {
     out << "Form name :" << form.getName() << "\nGrade to sign it:" << form.getGradeToSign()
-    << "\nGrade to execute:" << form.getGradeToExecute() << "\nSigned? " << form.getIsSigned() << std::endl;
+    << "\nGrade to execute it:" << form.getGradeToExecute() << "\nSigned? " << form.getIsSigned();
     return out; 
 }

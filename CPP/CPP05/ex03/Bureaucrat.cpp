@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 21:56:28 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/02 10:00:18 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/07 15:24:05 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ Bureaucrat::Bureaucrat(){}
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
 {
     if (grade < 1)
-        throw Bureaucrat::GradeTooLowException("Error: invalid grade");
+        throw Bureaucrat::GradeTooHighException("Error: The grade is too high");
     else if (grade > 150)
-        throw Bureaucrat::GradeTooHighException("Error: invalid grade");
+        throw Bureaucrat::GradeTooLowException("Error: The grade is too low");
     this->grade = grade;
 }
 

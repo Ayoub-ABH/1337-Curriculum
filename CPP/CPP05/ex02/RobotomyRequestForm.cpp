@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 09:16:09 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/02 12:07:32 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/07 16:32:11 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
     if (std::rand() % 2 == 0) {
         std::cout << this->target << " has been robotomized successfully" << std::endl;
     } else {
-        throw std::runtime_error(std::string("Robotomy failed on ") + this->target);
+        std::cout << "Robotomy failed on " << this->target << std::endl;
     }
 }
 

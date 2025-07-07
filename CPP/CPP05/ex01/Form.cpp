@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 22:55:45 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/05/17 16:26:30 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/07 15:16:41 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void Form::beSigned(const Bureaucrat& b)
     if (b.getGrade() <= this->gradeToSign)
         this->isSigned = true;
     else
-        throw Form::GradeTooLowException("Error: Grade too low!");
+        throw Form::GradeTooLowException("Error: Grade too low to sign this form!");
 }
 
 Form::GradeTooHighException::GradeTooHighException(const char *msg) throw() : msg(msg)
@@ -93,7 +93,7 @@ Form&	Form::operator=(const Form& form)
 std::ostream&	operator<<(std::ostream &out, const Form& form)
 {
     out << "Form name :" << form.getName() << "\nGrade to sign it:" << form.getGradeToSign()
-    << "\nGrade to execute:" << form.getGradeToExecute() << "\nSigned? " << form.getIsSigned() << std::endl;
+    << "\nGrade to execute it:" << form.getGradeToExecute() << "\nSigned? " << form.getIsSigned();
     return out; 
 }
 
