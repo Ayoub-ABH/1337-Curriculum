@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 13:47:34 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/06 15:17:56 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/14 06:31:39 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,25 +99,39 @@ void ScalarConverter::convertFromInt(const std::string &str)
         std::cout << "char: Non displayable" << std::endl;
     else
         std::cout << "char: '" << chr << "'" << std::endl;
+        
     if (intgr > INT_MAX || intgr < INT_MIN)
         std::cout << "int: impossible" << std::endl;
     else
-        std::cout << "int: " << intgr << std::endl;
+        std::cout << "int: " << static_cast<int>(intgr) << std::endl;
+        
+    if (intgr - static_cast<int>(intgr) == 0)
+        std::cout << std::fixed << std::setprecision(1);
+        
     std::cout << "float: " << static_cast<float>(intgr) << "f" << std::endl;
-    std::cout << "double: " << intgr << std::endl;
+    std::cout << "double: " << static_cast<double>(intgr) << std::endl;    
 }
 
 void ScalarConverter::convertFromFloat(const std::string &str)
 {
     char *end;
-    float flt = std::strtof(str.c_str(), &end);
+    double flt = std::strtod(str.c_str(), &end);
+    char chr = static_cast<char>(flt);
     
-    std::cout << "char: impossible" << std::endl;
+    if (flt < 0 || flt > 127)
+        std::cout << "char: impossible" << std::endl;
+    else if (!std::isprint(chr))
+        std::cout << "char: Non displayable" << std::endl;
+    else
+        std::cout << "char: '" << chr << "'" << std::endl;
+        
     if (flt > INT_MAX || flt < INT_MIN)
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << static_cast<int>(flt) << std::endl;
-    std::cout << "float: " << flt << "f" << std::endl;
+    if (flt - static_cast<int>(flt) == 0)
+        std::cout << std::fixed << std::setprecision(1);
+    std::cout << "float: " << static_cast<float>(flt) << "f" << std::endl;
     std::cout << "double: " << static_cast<double>(flt) << std::endl;
 }
 
@@ -125,14 +139,25 @@ void ScalarConverter::convertFromDouble(const std::string &str)
 {
     char *end;
     double dbl = std::strtod(str.c_str(), &end);
+    char chr = static_cast<char>(dbl);
     
-    std::cout << "char: impossible" << std::endl;
+    if (dbl < 0 || dbl > 127)
+        std::cout << "char: impossible" << std::endl;
+    else if (!std::isprint(chr))
+        std::cout << "char: Non displayable" << std::endl;
+    else
+        std::cout << "char: '" << chr << "'" << std::endl;
+    
     if (dbl > INT_MAX || dbl < INT_MIN)
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << static_cast<int>(dbl) << std::endl;
+        
+    if (dbl - static_cast<int>(dbl) == 0)
+        std::cout << std::fixed << std::setprecision(1);
+    
     std::cout << "float: " << static_cast<float>(dbl) << "f" << std::endl;
-    std::cout << "double: " << dbl << std::endl;
+    std::cout << "double: " << static_cast<double>(dbl) << std::endl;
 }
 
 void ScalarConverter::convertFromPseudo(const std::string &str)
@@ -151,22 +176,22 @@ void ScalarConverter::convert(std::string str)
     Type type = detectType(str);
     switch (type)
     {
-    case TYPE_CHAR:
-        convertFromChar(str);
-        break;
-    case TYPE_INT:
-        convertFromInt(str);
-        break;
-    case TYPE_FLOAT:
-        convertFromFloat(str);
-        break;
-    case TYPE_DOUBLE:
-        convertFromDouble(str);
-        break;
-    case TYPE_PSEUDO:
-        convertFromPseudo(str);
-        break;
-    default:
-        std::cout << "Invalid literal." << std::endl;
+        case TYPE_CHAR:
+            convertFromChar(str);
+            break;
+        case TYPE_INT:
+            convertFromInt(str);
+            break;
+        case TYPE_FLOAT:
+            convertFromFloat(str);
+            break;
+        case TYPE_DOUBLE:
+            convertFromDouble(str);
+            break;
+        case TYPE_PSEUDO:
+            convertFromPseudo(str);
+            break;
+        default:
+            std::cout << "Invalid literal." << std::endl;
     }
 }

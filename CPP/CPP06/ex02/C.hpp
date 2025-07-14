@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/04 17:10:09 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/13 15:21:19 by aait-bab         ###   ########.fr       */
+/*   Created: 2025/07/09 14:14:40 by aait-bab          #+#    #+#             */
+/*   Updated: 2025/07/09 14:35:19 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef C_HPP
 
-int main(int ac, char **av)
+#define C_HPP
+
+#include "Base.hpp"
+
+class C: public Base
 {
-	if (ac == 2)
-		ScalarConverter::convert(av[1]);
-	else
-		std::cerr << "invalide usage: ./convert arg" << std::endl;
-	return (0);
-}
+
+};
+
+#endif

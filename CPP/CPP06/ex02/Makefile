@@ -2,10 +2,10 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-TARGET = ex00
+TARGET = ex02
 
-HEADER = Bureaucrat.hpp
-SRCS = Bureaucrat.cpp main.cpp
+HEADER = A.hpp B.hpp Base.hpp C.hpp
+SRCS = Base.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET)
