@@ -4,8 +4,8 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 TARGET = ex01
 
-HEADER = Oprations.hpp 
-SRCS = main.cpp
+HEADER = iter.hpp 
+SRCS = main.cpp 
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET)

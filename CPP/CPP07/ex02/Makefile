@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 TARGET = ex02
 
-HEADER = Oprations.hpp 
+HEADER = Array.hpp 
 SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
