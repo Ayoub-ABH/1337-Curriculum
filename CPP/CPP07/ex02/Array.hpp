@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 08:00:47 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/15 10:05:37 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/18 15:42:16 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Array
         Array()
         {
             this->n = 0;
-            this->array = new T[0];
+            this->array = NULL;
         }   
         
         Array(unsigned int n)

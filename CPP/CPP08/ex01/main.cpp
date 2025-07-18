@@ -1,31 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 18:07:38 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/18 15:34:14 by aait-bab         ###   ########.fr       */
+/*   Created: 2025/07/17 10:15:06 by aait-bab          #+#    #+#             */
+/*   Updated: 2025/07/17 10:15:07 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef ITER_HPP
-
-# define ITER_HPP
-
-#include <iostream>
-
-template <typename T, typename F>
-void iter(T* tab, std::size_t size, F func)
-{
-    if (!tab)
-        throw std::invalid_argument("Null pointer passed to iter");
-    for (std::size_t i=0; i < size; i++)
-        func(tab[i]);
-}
-
-#endif
-
-
 
