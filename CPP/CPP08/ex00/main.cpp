@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 15:21:57 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/07/17 10:08:11 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/07/19 11:52:02 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ int main()
     catch (std::exception& e)
     {
         std::cout << e.what() << std::endl;
-    }
+    }    
     return 0;
 }

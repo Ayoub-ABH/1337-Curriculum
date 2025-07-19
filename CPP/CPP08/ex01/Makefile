@@ -2,7 +2,7 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-TARGET = ex00
+TARGET = ex01
 
 HEADER = Span.hpp 
 SRCS = main.cpp Span.cpp

@@ -2,9 +2,9 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-TARGET = ex00
+TARGET = ex02
 
-HEADER = Oprations.hpp 
+HEADER = MutantStack.hpp 
 SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
