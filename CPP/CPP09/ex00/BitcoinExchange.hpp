@@ -4,14 +4,14 @@
 
 #include <iostream> 
 #include <fstream>
-#include <vector>
+#include <map>
 
 
 class BitcoinExchange
 {
 private:
-    std::vector<std::string>    lines;
-    std::string                 pathFile;
+    std::map<int, double>    linesMap;
+    std::string              pathFile;
 public:
     BitcoinExchange();
     BitcoinExchange(const BitcoinExchange& btcExg);
@@ -19,6 +19,8 @@ public:
     BitcoinExchange& operator=(const BitcoinExchange& btcExg);
 
     void parseFile(const std::string &pathfile);
+    bool parseDate(const std::string &date);
+    bool parseValue(const std::string &value);
 
     void predict();
 
