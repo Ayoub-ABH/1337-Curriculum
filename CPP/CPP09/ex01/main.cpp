@@ -5,35 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 18:04:51 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/12/03 18:04:54 by aait-bab         ###   ########.fr       */
+/*   Created: 2025/12/03 18:05:03 by aait-bab          #+#    #+#             */
+/*   Updated: 2025/12/03 18:14:13 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "BitcoinExchange.hpp"
+#include "RPN.hpp"
 
 int main(int ac, char **av)
 {
-
-
-    if (ac < 2)
+    if (ac != 2)
     {
-        std::cerr << "Error: could not open file." << std::endl; 
+        std::cerr << "invalid arguments" << std::endl;
         return 1;
     }
 
-    std::ifstream file(av[1]);
-    if (!file)
-    {
-        std::cerr << "Error: could not open file." << std::endl;
-        return 1;
-    }
-    
-    BitcoinExchange btcExg;
-
-    btcExg.predict(av[1]);
-
-    file.close();
-
+    RPN rpn;
+    rpn.calculate(av[1]);
+    return 0;
 }

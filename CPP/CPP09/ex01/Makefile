@@ -2,10 +2,10 @@
 CXX = g++
 CXXFLAGS = -Wall -Wextra -Werror
 
-TARGET = btc
+TARGET = RPN
 
-HEADER = BitcoinExchange.hpp
-SRCS = main.cpp BitcoinExchange.cpp
+HEADER = RPN.hpp
+SRCS = main.cpp RPN.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET)

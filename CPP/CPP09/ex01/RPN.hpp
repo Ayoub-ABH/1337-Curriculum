@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 18:04:51 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/12/03 18:04:54 by aait-bab         ###   ########.fr       */
+/*   Created: 2025/12/03 18:04:39 by aait-bab          #+#    #+#             */
+/*   Updated: 2025/12/03 18:11:54 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef RPN_HPP
 
-#include "BitcoinExchange.hpp"
+#define RPN_HPP
 
-int main(int ac, char **av)
+
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <stack>
+#include <string>
+#include <cctype>
+#include <cstdlib>
+
+class RPN
 {
+private:
+    std::stack<int>    rpnStack;
+public:
+    RPN();
+    RPN(const RPN& rpn);
+    RPN& operator=(const RPN& rpn);
 
-
-    if (ac < 2)
-    {
-        std::cerr << "Error: could not open file." << std::endl; 
-        return 1;
-    }
-
-    std::ifstream file(av[1]);
-    if (!file)
-    {
-        std::cerr << "Error: could not open file." << std::endl;
-        return 1;
-    }
+    void calculate(const std::string &input);
     
-    BitcoinExchange btcExg;
+    ~RPN();
+};
 
-    btcExg.predict(av[1]);
-
-    file.close();
-
-}
+#endif
