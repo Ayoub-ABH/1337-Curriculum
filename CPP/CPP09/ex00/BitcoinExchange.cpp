@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 18:04:44 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/12/03 18:04:45 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/12/14 13:29:44 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ bool BitcoinExchange::parseValue(const std::string &value)
 
 void BitcoinExchange::predict(const std::string &pathfile)
 {
-    std::ifstream file(pathfile);
+    std::ifstream file(pathfile.c_str());
     std::string   line;
     if (!file.is_open())
     {
@@ -137,8 +137,6 @@ void BitcoinExchange::predict(const std::string &pathfile)
         }
         std::string date = line.substr(0, delimiterPos - 1);
         std::string value = line.substr(delimiterPos + 2);
-        std::cout << date << std::endl;
-        std::cout << value << std::endl;
         if  (parseDate(date) && parseValue(value))
         {
             int year = atoi(date.substr(0, 4).c_str());

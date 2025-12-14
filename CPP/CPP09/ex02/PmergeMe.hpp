@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 00:57:41 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/12/14 01:38:00 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/12/14 14:09:09 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <vector>
 #include <deque>
 #include <string>
+#include <cstdlib>
 
 
 template <typename Container>
@@ -61,13 +62,13 @@ template <typename C>
 void PmergeMe<C>::createPairs()
 {
     for (size_t i = 0; i < numbers.size(); i += 2) {
-        int a = numbers[i];
-        int b = numbers[i + 1];
+        int p1 = numbers[i];
+        int p2 = numbers[i + 1];
 
-        if (a < b)
-            std::swap(a, b);
+        if (p1 < p2)
+            std::swap(p1, p2);
 
-        pairs.push_back(std::make_pair(a, b));
+        pairs.push_back(std::make_pair(p1, p2));
     }
 }
 

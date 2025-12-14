@@ -6,7 +6,7 @@
 /*   By: aait-bab <aait-bab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 18:04:47 by aait-bab          #+#    #+#             */
-/*   Updated: 2025/12/03 18:04:48 by aait-bab         ###   ########.fr       */
+/*   Updated: 2025/12/14 13:29:12 by aait-bab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <fstream>
 #include <map>
 #include <sstream>
+#include <cstdlib>
+
 
 
 
