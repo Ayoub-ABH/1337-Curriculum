@@ -29,32 +29,70 @@ RPN& RPN::operator=(const RPN& rpn)
     return *this;
 }
 
+
 void RPN::calculate(const std::string &input)
 {
-    std::stringstream ss(input);
-    std::string token;
-
-    while (ss >> token)
+    for (size_t i = 0; i < input.size(); i++)
     {
-        if (std::isdigit(token[0]))
-        {
-            rpnStack.push(std::stoi(token));
-        }
+        char c = input[i];
+
+        if (c == ' ')
+            continue;
+
+        if (isdigit(c))
+            processDigit(input, i);
+        else if (isOperator(c))
+            processOperator(c);
         else
-        {
-            int operand2 = rpnStack.top(); rpnStack.pop();
-            int operand1 = rpnStack.top(); rpnStack.pop();
-            if (token == "+")
-                rpnStack.push(operand1 + operand2);
-            else if (token == "-")
-                rpnStack.push(operand1 - operand2);
-            else if (token == "*")
-                rpnStack.push(operand1 * operand2);
-            else if (token == "/")
-                rpnStack.push(operand1 / operand2);
-        }
+            throw std::runtime_error("Error");
     }
+
+    if (rpnStack.size() != 1)
+        throw std::runtime_error("Error");
+    
     std::cout << rpnStack.top() << std::endl;
+}
+
+
+bool RPN::isOperator(char c) const
+{
+    return c == '+' || c == '-' || c == '*' || c == '/';
+}
+
+void RPN::processDigit(const std::string &input, size_t index)
+{
+    if (index + 1 < input.size() && isdigit(input[index + 1]))
+        throw std::runtime_error("Error");
+    
+    rpnStack.push(input[index] - '0');
+}
+
+void RPN::processOperator(char op)
+{
+    if (rpnStack.size() < 2)
+        throw std::runtime_error("Error");
+    
+    float operand2 = rpnStack.top(); rpnStack.pop();
+    float operand1 = rpnStack.top(); rpnStack.pop();
+    
+    float result = performOperation(operand1, operand2, op);
+    rpnStack.push(result);
+}
+
+float RPN::performOperation(float operand1, float operand2, char op) const
+{
+    switch (op)
+    {
+        case '+': return operand1 + operand2;
+        case '-': return operand1 - operand2;
+        case '*': return operand1 * operand2;
+        case '/':
+            if (operand2 == 0)
+                throw std::runtime_error("Error: Division by zero");
+            return operand1 / operand2;
+        default:
+            throw std::runtime_error("Error");
+    }
 }
     
 RPN::~RPN()

@@ -137,6 +137,8 @@ void BitcoinExchange::predict(const std::string &pathfile)
         }
         std::string date = line.substr(0, delimiterPos - 1);
         std::string value = line.substr(delimiterPos + 2);
+        std::cout << date << std::endl;
+        std::cout << value << std::endl;
         if  (parseDate(date) && parseValue(value))
         {
             int year = atoi(date.substr(0, 4).c_str());

@@ -26,15 +26,20 @@
 class RPN
 {
 private:
-    std::stack<int>    rpnStack;
+    std::stack<float> rpnStack;
+    
+    bool isOperator(char c) const;
+    void processDigit(const std::string &input, size_t index);
+    void processOperator(char op);
+    float performOperation(float operand1, float operand2, char op) const;
+
 public:
     RPN();
     RPN(const RPN& rpn);
     RPN& operator=(const RPN& rpn);
+    ~RPN();
 
     void calculate(const std::string &input);
-    
-    ~RPN();
 };
 
 #endif
